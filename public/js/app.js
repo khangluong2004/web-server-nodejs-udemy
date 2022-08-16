@@ -9,9 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const location = search.value
 
         document.querySelector("#mess").textContent = "Loading ..."
-
+        console.log("Before")
         fetch('/weather?address=' + location)
         .then((response) => {
+            console.log('After')
             console.log("Response", response)
             response.json().then((data) => {
                 console.log("Data")
