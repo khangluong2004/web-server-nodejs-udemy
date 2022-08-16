@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("Response", response)
             console.log(response.ok)
             if (response.ok == false){
-                document.querySelector("#mess").innerHTML = data.status + ": " + data.statusText;
+                document.querySelector("#mess").innerHTML = response.status + ": " + response.statusText;
                 return; 
             }
             response.json().then((data) => {
