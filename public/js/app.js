@@ -16,7 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
             response.json().then((data) => {
                 if (data.error){
                     document.querySelector("#mess").innerHTML = data.error
-                } else {
+                } else if (data.ok == false) {
+                    document.querySelector("#mess").innerHTML = data.status + data.statusText
+                } 
+                else {
                     document.querySelector("#mess").innerHTML = 'Location: ' + data.location + ' ; Forecast: ' + data.forecast
                 }
             })
