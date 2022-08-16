@@ -12,8 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         fetch('/weather?address=' + location)
         .then((response) => {
-            console.log(response)
+            console.log("Response", response)
             response.json().then((data) => {
+                console.log("Data")
+                console.log(data)
                 if (data.error){
                     document.querySelector("#mess").innerHTML = data.error
                 } else if (data.ok == false) {
