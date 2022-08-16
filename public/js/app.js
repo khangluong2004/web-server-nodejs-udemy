@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault()
         const location = search.value
 
-        document.querySelector("#forecast").textContent = "Loading ..."
+        document.querySeletor("#forecast").textContent = "Loading ..."
 
         fetch('http://localhost:3000/weather?address=' + location)
         .then((response) => {
