@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then((response) => {
             console.log('After')
             console.log("Response", response)
+            console.log(response.ok)
             if (response.ok == false){
                 document.querySelector("#mess").innerHTML = data.status + ": " + data.statusText;
                 return; 
