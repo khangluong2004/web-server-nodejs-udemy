@@ -1,20 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const weatherForm = document.querySelector('form')
-    const search = document.querySelector("#loc")
+    const weatherForm = document.querySelector('form');
+    const mess = document.querySelector('#mess');
+    const search = document.querySelector("#loc");
+
 
     weatherForm.addEventListener('submit', (e) => {
         e.preventDefault()
         const location = search.value
 
-        document.querySeletor("#forecast").textContent = "Loading ..."
+        document.querySelector("#mess").textContent = "Loading ..."
 
         fetch('/weather?address=' + location)
         .then((response) => {
             response.json().then((data) => {
                 if (data.error){
-                    document.querySelector("#forecast").innerHTML = data.error
+                    document.querySelector("#mess").innerHTML = data.error
                 } else {
-                    document.querySelector("#forecast").innerHTML = 'Location: ' + data.location + ' ; Forecast: ' + data.forecast
+                    document.querySelector("#mess").innerHTML = 'Location: ' + data.location + ' ; Forecast: ' + data.forecast
                 }
             })
         })
