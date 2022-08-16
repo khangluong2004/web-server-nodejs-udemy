@@ -12,9 +12,9 @@ const forecast = (long, lat, callback) => {
             callback('Invalid coordinate', undefined)
         }
         else {
-            const {weather_descriptions: weather, temperature: temp, feelslike: like} = response.body.current
+            const {weather_descriptions: weather, temperature: temp, feelslike: like, wind_speed} = response.body.current
             callback(undefined, response.body.location.name + ' : ' + weather[0] +  ". It is currently " + temp + 
-            " degrees out. It feels like " + like + " degrees out.")
+            " degrees K out. It feels like " + like + " degrees K out. The wind speed is " + wind_speed + " km/h.")
         }
     })
 }
