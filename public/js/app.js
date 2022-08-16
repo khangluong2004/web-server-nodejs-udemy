@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Client side JS loaded")
-
     const weatherForm = document.querySelector('form')
     const search = document.querySelector("#loc")
 
