@@ -14,14 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
         .then((response) => {
             console.log('After')
             console.log("Response", response)
+            if (response.ok == false){
+                document.querySelector("#mess").innerHTML = data.status + ": " + data.statusText;
+                return; 
+            }
             response.json().then((data) => {
                 console.log("Data")
                 console.log(data)
                 if (data.error){
                     document.querySelector("#mess").innerHTML = data.error
-                } else if (data.ok == false) {
-                    document.querySelector("#mess").innerHTML = data.status + data.statusText
-                } 
+                }
                 else {
                     document.querySelector("#mess").innerHTML = 'Location: ' + data.location + ' ; Forecast: ' + data.forecast
                 }
